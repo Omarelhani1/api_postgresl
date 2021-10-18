@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block contenido %}
+<form action=/postgres method="post">
+    <span class="login100-form-title p-b-26">
+    </span>
+    <span class="login100-form-title p-b-48">
+        <i class="zmdi zmdi-font"></i>
+    </span>
+
+    <div class="wrap-input100 validate-input" data-validate = "Base de datos">
+        <input class="input100" type="text" name="Base de datos" value="{{bd}}">
+        <span class="focus-input100" data-placeholder="Base de datos"></span>
+    </div>
+    <div class="wrap-input100 validate-input" data-validate = "Usuario">
+        <input class="input100" type="text" name="Usuario" value="{{u}}">
+        <span class="focus-input100" data-placeholder="Usuario"></span>
+    </div>
+    <div class="wrap-input100 validate-input" data-validate="Contraseña">
+        <span class="btn-show-pass">
+            <i class="zmdi zmdi-eye"></i>
+        </span>
+        <input class="input100" type="Contraseña" name="pass" value="{{p}}">
+        <span class="focus-input100" data-placeholder="Contraseña"></span>
+    </div>
+    <input type="submit" value="Enviar"/>
+
+    <div class="text-center p-t-115">
+        <span class="txt1">
+            Don’t have an account?
+        </span>
+
+        <a class="txt2" href="#">
+            Sign Up
+        </a>
+    </div>
+</form>
+{% endblock %}

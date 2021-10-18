@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block tittle %}{{bd}}{% endblock %}
+
+{% block contenido %}
+{% for nombre_tabla in lista_tablas -%}
+    <table>
+        <caption><strong>{{nombre_tabla}}</strong></caption>
+        <tr>
+            <th>
+                {% for b in lista_columnas[lista_tablas.index(nombre_tabla)] -%}
+                    <p>{{((b.split("(")[1]).split(",)")[0]).split("'")[1]}}</p>
+                {% endfor -%}  
+            </th>
+            <th>
+                {% for b in lista_resultados[lista_tablas.index(nombre_tabla)] -%}
+                    {% for c in b-%}
+                        <p>{{c}}</p>
+                    {% endfor -%}
+                {% endfor -%}  
+            </th>
+        </tr>
+    </table>
+    <br></br>
+{% endfor -%}
+{% endblock %}
