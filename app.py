@@ -29,7 +29,7 @@ def postgres():
         for a in cur.fetchall():
             lista.append(a)
         lista_resultados.append(lista)
-    return render_template("psql.html",d=d,lista_tablas=lista_tablas,lista_columnas=lista_columnas,num=len(lista_tablas),lista_resultados=lista_resultados)
+    return render_template("psql.html",d=bd,lista_tablas=lista_tablas,lista_columnas=lista_columnas,num=len(lista_tablas),lista_resultados=lista_resultados)
 
 
 port=os.environ["PORT"]
