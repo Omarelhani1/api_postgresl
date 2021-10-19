@@ -9,10 +9,10 @@ def login():
 
 @app.route('/psql',methods=["POST"])
 def postgres():
-    bd=request.form.get("d")
-    u=request.form.get("u")
-    p=request.form.get("p")
-    conexion=psycopg2.connect(host="192.168.122.3",database=bd,user="root",password="omar")
+    bd=request.form.get("bd")
+    user=request.form.get("user")
+    passwd=request.form.get("passwd")
+    conexion=psycopg2.connect(host="192.168.122.3",database=bd,user=user,password=passwd)
     cur = conexion.cursor()
     lista_tablas=['medicos','pacientes','horasdeconsulta','salasdeconsultas']
     lista_columnas=[]
